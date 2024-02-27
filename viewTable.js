@@ -9,13 +9,13 @@ csvFileInput.addEventListener("change", (e) => {
     papaParse(csvFileInput.files[0])
 });
 
-const csvFileSelected = document.getElementById('selectFile');
-csvFileSelected.addEventListener("change", (ev) => {
-    // location.href=event.target.value;
-    $.get(ev.target.value, function (data) {
-        papaParse(data)
-    });
-});
+// const csvFileSelected = document.getElementById('selectFile');
+// csvFileSelected.addEventListener("change", (ev) => {
+//     // location.href=event.target.value;
+//     $.get(ev.target.value, function (data) {
+//         papaParse(data)
+//     });
+// });
 
 function dropHandler(ev) {
     ev.preventDefault();
@@ -93,10 +93,6 @@ function initDataTable() {
         scrollX: true,
         scrollY: '75vh',
         scrollCollapse: true,
-        dom: 'PlBfritp',
-        // dom: 'P'+
-        // '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-tl ui-corner-tr"lBfr>'+'t'+
-        // '<"fg-toolbar ui-toolbar ui-widget-header ui-helper-clearfix ui-corner-bl ui-corner-br"ip>',
         processing: true,
         pagingType: "full_numbers",
         keys: true,
@@ -109,12 +105,12 @@ function initDataTable() {
             search: '',
             searchPlaceholder: 'Enter Search Query'
         },
-        // responsive: true,
+        responsive: true,
         deferRender: true,
         buttons: [
             {
                 extend: 'colvis',
-                // collectionTitle: 'Column Visibility Panel'
+                collectionTitle: 'Column Visibility Panel'
             },
             {
                 extend: 'csv',
@@ -139,8 +135,6 @@ function initDataTable() {
                             }
                         });
                 });
-            $('#tableData_filter input')
-                .after('<span class="fa-icon" /><i class="fa-solid fa-magnifying-glass" />');
         },
         columnDefs: [
             {
