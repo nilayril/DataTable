@@ -91,33 +91,20 @@ input[type=file]::file-selector-button:hover {
   background: rgb(0, 69, 0);
 }
 
+.dt-button-collection {
+  background-color: black !important;
+  border-color: white !important;
+}
+
+.ui-state-default {
+  background-color: rgb(51, 51, 51) !important;
+}
+
 tfoot input {
-  background-color: black;
+  background: black;
   color: white;
   width: 100%;
   padding: 3px;
   border-radius: 5px;
   box-sizing: border-box;
-}
-
-/* dataTables Search input box */
-.dataTables_filter {
-  position: relative;
-}
-
-.dataTables_filter input {
-  width: 100%;
-  /* height: 30px; */
-  background: #000000;
-  border: 1px solid white;
-  border-radius: 10px;
-  box-shadow: 0 0 3px #ffffff, 0 10px 15px #336633 inset;
-  text-indent: 5px;
-}
-
-.fa-icon {
-  color: white;
-  position: absolute;
-  top: 5px;
-  right: 0;
 }

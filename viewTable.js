@@ -94,8 +94,23 @@ function initDataTable() {
         scrollY: '75vh',
         scrollCollapse: true,
         processing: true,
+        paging: true,
         pagingType: "full_numbers",
         keys: true,
+        // buttons: [
+        //     {
+        //         extend: 'colvis',
+        //         collectionTitle: 'Column Visibility Panel'
+        //     },
+        //     {
+        //         extend: 'csv',
+        //         text: '<i class="fa-solid fa-file-csv fa-xl" />',
+        //         titleAttr: 'Download Data as CSV',
+        //         exportOptions: {
+        //             columns: ':visible'
+        //         }
+        //     }
+        // ],
         searchPanes: {
             layout: 'columns-3',
             initCollapsed: true,
@@ -105,22 +120,42 @@ function initDataTable() {
             search: '',
             searchPlaceholder: 'Enter Search Query'
         },
+        layout: {
+            top1: 'searchPanes',
+            topStart: {
+                pageLength: {},
+                buttons: [
+                    {
+                        extend: 'colvis',
+                        collectionTitle: 'Column Visibility Panel'
+                    },
+                    {
+                        extend: 'csv',
+                        text: '<i class="bi bi-filetype-csv"></i>',
+                        titleAttr: 'Download Data as CSV',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    }
+                ]
+            },
+            topEnd: 'search',
+            // topEnd: {
+            //     search: {
+            //         text: '',
+            //         placeholder: 'Enter Search Query'
+            //     }
+            // },
+            bottomStart: 'info',
+            bottomEnd: 'paging'
+            // bottomEnd: {
+            //     paging: {
+            //         type: 'full_numbers'
+            //     }
+            // }
+        },
         responsive: true,
         deferRender: true,
-        buttons: [
-            {
-                extend: 'colvis',
-                collectionTitle: 'Column Visibility Panel'
-            },
-            {
-                extend: 'csv',
-                text: '<i class="fa-solid fa-file-csv fa-xl" />',
-                titleAttr: 'Download Data as CSV',
-                exportOptions: {
-                    columns: ':visible'
-                }
-            }
-        ],
         initComplete: function () {
             this.api()
                 .columns()
